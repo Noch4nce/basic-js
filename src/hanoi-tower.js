@@ -22,7 +22,13 @@ module.exports = function calculateHanoi(disksNumber, turnsSpeed) {
     //     }
     // }
 
-    const turns = disksNumber * 6 + 1;
-    const seconds = turns / (turnsSpeed / (60 * 60));
-    return { turns, seconds }
+    // const turns = Math.pow(2, disksNumber) - 1;
+
+    let turns = Math.pow(2, disksNumber) - 1;
+    let seconds = Math.floor(turns / (turnsSpeed / (60 * 60)));
+
+    return {
+        turns,
+        seconds
+    }
 };
